@@ -1,0 +1,5 @@
+Instructions for remote desktop of robot.
+1. initiate remote desktop session on raspberry pi:
+   tightvncserver
+2. Note log file name
+3. on remote computer, initiate 
