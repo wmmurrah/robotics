@@ -30,6 +30,4 @@ def distance(measure='cm'):
         distance = 100
         gpio.cleanup()
         return distance
-
-#print(distance('cm'))
     
