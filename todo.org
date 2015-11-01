@@ -1,0 +1,31 @@
+
+* Sensory
+
+** TODO Sonar
+   DEADLINE: <2015-10-20 Tue>
+
+*** Distance
+
+*** Movement
+
+** DONE Light
+   DEADLINE: <2015-09-24 Thu>
+
+** TODO Camera
+   DEADLINE: <2015-10-22 Thu>
+
+* Motor
+
+** DONE Remote Control
+   DEADLINE: <2015-09-16 Wed>
+
+** DONE Autonomous
+   DEADLINE: <2015-09-21 Mon>
+
+* Cognitive
+
+** TODO Executive
+   DEADLINE: <2015-11-12 Thu>
+
+** TODO Memory
+   DEADLINE: <2015-10-28 Wed>
