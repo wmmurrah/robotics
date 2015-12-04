@@ -1,0 +1,11 @@
+import motor as mr
+import sonar as sr
+
+
+def check_distance():
+    mr.init()
+    dist = sr.distance()
+    while dist < 15:
+        print('Too close', dist)
+        mr.init()
+        mr.random_reorient()

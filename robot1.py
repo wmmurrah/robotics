@@ -15,4 +15,3 @@ gpio.output(15, False)
 time.sleep(0.5)
 
 gpio.cleanup()
-

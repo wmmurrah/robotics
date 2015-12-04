@@ -2,7 +2,7 @@ import RPi.GPIO as gpio
 import time
 
 
-def distance(measure='in'):
+def distance(measure='cm'):
     try:
         gpio.setmode(gpio.BOARD)
         gpio.setup(12, gpio.OUT)
@@ -32,5 +32,3 @@ def distance(measure='in'):
         distance = 100
         gpio.cleanup()
         return distance
-
-#  print(distance('cm'))

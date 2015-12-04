@@ -1,17 +1,14 @@
- import RPi.GPIO as gpio
-import time
-import sys
 import Tkinter as tk
 import rob_moves as mv
+
 
 def key_input(event):
     mv.init()
     print'Key:', event.char
     key_press = event.char
     st = 0.030
-
     if key_press.lower() == 'w':
-       mv. forward(st)
+        mv.forward(st)
     elif key_press.lower() == 's':
         mv.reverse(st)
     elif key_press.lower() == 'a':
@@ -28,5 +25,3 @@ def key_input(event):
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
-        
-          

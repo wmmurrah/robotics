@@ -5,6 +5,7 @@ buzzer_pin = 22
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(buzzer_pin, GPIO.OUT)
 
+
 def buzz(pitch, duration):
     period = 1.0 / pitch
     delay = period / 2

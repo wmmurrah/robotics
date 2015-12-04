@@ -1,11 +1,16 @@
-* Mounting usb memory stick for data
-  1. Check mounted drives with `fdisk -l`
-  2. Mount disk with `mount /dev/sda1 /mnt
-     see http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian
-  3. Unmount when done with `sudo umount /mnt`
+#+TITLE: Kindy Robot 
+#+AUTHOR: William 
+
+* Hardware 
+
+** Mounting usb memory stick for data
+   1. Check mounted drives with ~sudo fdisk -l~
+   2. Mount disk with ~sudo mount -o uid=pi,gid=pi /dev/sda1 /mnt/flash64~       
+      see http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian
+   3. Unmount when done with ~sudo umount /mnt/flash64~
 
 
-* GPIO pinout table
+** GPIO pinout table
 
 | Pin |          GPIO | function | color  | Pin |        GPIO | function      | color  |
 |-----+---------------+----------+--------+-----+-------------+---------------+--------|
@@ -31,9 +36,41 @@
 |  39 |        Ground |          |        |  40 |          21 |               |        |
 |     |               |          |        |     |             |               |        |
 
-* Instructions for remote desktop of robot.
-  1. initiate remote desktop session on raspberry pi:
-     `tightvncserver`
-  2. Note log file name
-  3. on remote computer, initiate
+** Instructions for remote desktop of robot.
+   1. initiate remote desktop session on raspberry pi:
+      =tightvncserver=
+   2. Note log file name
+   3. on remote computer, ~initiate~
+      
+* Software
 
+** Programming
+
+*** Cognitive Map
+
+**** Cognition
+***** TODO Spatial
+
+**** Action
+***** Motor [85%]
+****** DONE Forward
+****** DONE Reverse
+****** DONE turn_right
+****** DONE turn_left
+****** DONE pivot_left
+****** DONE pivot_right
+****** TODO Random reorient
+***** LED
+***** Sound
+***** Video
+
+**** Perception
+***** Sonar [0%]
+****** TODO Monitor Distance
+****** TODO Measure Distance
+****** TODO Movement Detection
+
+*** Tasks
+
+**** TODO Random Walk
+     Randomly walk around environment, avioding obstacles
