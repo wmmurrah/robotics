@@ -38,11 +38,39 @@
 
 ** Instructions for remote desktop of robot.
    1. initiate remote desktop session on raspberry pi:
-      =tightvncserver=
+      =tightvncserver :1 -geometry 1920x1080 -depth 24=  should play around with these parameters for optimality
    2. Note log file name
-   3. on remote computer, ~initiate~
+   3. on remote computer either ~ssh @pi.192.168.1.103~ or use remote desktop
+*** TODO Keyboard for remote desktop
+    Determine how to setup keyboard on remote desktop to use keyboard setup on raspbian.
       
 * Software
+
+** Raspbian Operating System Setup
+*** set emacs aliases
+    add the following code to .bashrc
+
+    #+BEGIN_SRC shell
+    # user defined aliases (note space after sudo)
+    alias sudo='sudo '     
+    alias emac='emacs -nw'
+    #+END_SRC
+
+
+*** Add Ctl-Alt-T shortcut for terminal
+ 
+    Open emac ~/.config/openbox/lxde-pi-rc.xml
+
+    Add the following between <keyboard> and </keyboard>
+
+    #+BEGIN_SRC 
+      <!-- Launch terminal when ctr-alt-t is pressed -->
+      <keybind key="C-A-t">
+        <action name="Execute"><command>lxterminal</command>
+    </action>
+      </keybind>
+
+    #+END_SRC
 
 ** Programming
 
