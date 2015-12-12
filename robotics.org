@@ -59,18 +59,19 @@
 
 *** Add Ctl-Alt-T shortcut for terminal
  
-    Open emac ~/.config/openbox/lxde-pi-rc.xml
+    Open ~emacs ~/.config/openbox/lxde-pi-rc.xml~
 
     Add the following between <keyboard> and </keyboard>
 
-    #+BEGIN_SRC 
-      <!-- Launch terminal when ctr-alt-t is pressed -->
-      <keybind key="C-A-t">
-        <action name="Execute"><command>lxterminal</command>
+#+BEGIN_SRC
+ 
+  <!-- Launch terminal when ctr-alt-t is pressed -->
+  <keybind key="C-A-t">
+    <action name="Execute"><command>lxterminal</command>
     </action>
-      </keybind>
+  </keybind>
 
-    #+END_SRC
+ #+END_SRC
 
 ** Programming
 
