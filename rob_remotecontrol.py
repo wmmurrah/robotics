@@ -19,6 +19,10 @@ def key_input(event):
         mv.pivot_left(st)
     elif key_press.lower() == 'e':
         mv.pivot_right(st)
+    elif key_press.lower() == 'z':
+        mv.reverse_left(st)
+    elif key_press.lower() == 'x':
+        mv.reverse_right(st)
     else:
         pass
 
