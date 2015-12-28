@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Kindy Robot</title>
-<!-- 2015-11-25 Wed 09:53 -->
+<!-- 2015-12-05 Sat 09:30 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kindy Robot</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="William" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -58,15 +65,14 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -142,19 +148,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Hardware</a>
+<li><a href="#orgheadline4">1. Hardware</a>
 <ul>
-<li><a href="#sec-1-1">1.1. Mounting usb memory stick for data</a></li>
-<li><a href="#sec-1-2">1.2. GPIO pinout table</a></li>
-<li><a href="#sec-1-3">1.3. Instructions for remote desktop of robot.</a></li>
+<li><a href="#orgheadline1">1.1. Mounting usb memory stick for data</a></li>
+<li><a href="#orgheadline2">1.2. GPIO pinout table</a></li>
+<li><a href="#orgheadline3">1.3. Instructions for remote desktop of robot.</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. Software</a>
+<li><a href="#orgheadline28">2. Software</a>
 <ul>
-<li><a href="#sec-2-1">2.1. Programming</a>
+<li><a href="#orgheadline27">2.1. Programming</a>
 <ul>
-<li><a href="#sec-2-1-1">2.1.1. Cognitive Map</a></li>
-<li><a href="#sec-2-1-2">2.1.2. Tasks</a></li>
+<li><a href="#orgheadline24">2.1.1. Cognitive Map</a></li>
+<li><a href="#orgheadline26">2.1.2. Tasks</a></li>
 </ul>
 </li>
 </ul>
@@ -163,357 +169,347 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Hardware</h2>
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">1</span> Hardware</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Mounting usb memory stick for data</h3>
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> Mounting usb memory stick for data</h3>
 <div class="outline-text-3" id="text-1-1">
 <ol class="org-ol">
-<li>Check mounted drives with <code>sudo fdisk -l</code>
-</li>
+<li>Check mounted drives with <code>sudo fdisk -l</code></li>
 <li>Mount disk with <code>sudo mount -o uid=pi,gid=pi /dev/sda1 /mnt/flash64</code>       
-      see <a href="http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian">http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian</a>
-</li>
-<li>Unmount when done with <code>sudo umount /mnt/flash64</code>
-</li>
+      see <a href="http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian">http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian</a></li>
+<li>Unmount when done with <code>sudo umount /mnt/flash64</code></li>
 </ol>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> GPIO pinout table</h3>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> GPIO pinout table</h3>
 <div class="outline-text-3" id="text-1-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
+<caption class="t-above"><span class="table-number">Table 1:</span> Raspberry pi 2b pinout table</caption>
 
 <colgroup>
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="right">Pin</th>
-<th scope="col" class="right">GPIO</th>
-<th scope="col" class="left">function</th>
-<th scope="col" class="left">color</th>
-<th scope="col" class="right">Pin</th>
-<th scope="col" class="right">GPIO</th>
-<th scope="col" class="left">function</th>
-<th scope="col" class="left">color</th>
+<th scope="col" class="org-right">Pin</th>
+<th scope="col" class="org-right">GPIO</th>
+<th scope="col" class="org-left">function</th>
+<th scope="col" class="org-left">color</th>
+<th scope="col" class="org-right">Pin</th>
+<th scope="col" class="org-right">GPIO</th>
+<th scope="col" class="org-left">function</th>
+<th scope="col" class="org-left">color</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="right">1</td>
-<td class="right">3.3v DC power</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">2</td>
-<td class="right">5v DC power</td>
-<td class="left">motors</td>
-<td class="left">green</td>
+<td class="org-right">1</td>
+<td class="org-right">3.3v DC power</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">5v DC power</td>
+<td class="org-left">motors</td>
+<td class="org-left">green</td>
 </tr>
 
 <tr>
-<td class="right">3</td>
-<td class="right">02</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">4</td>
-<td class="right">5v DC power</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">02</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">5v DC power</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">5</td>
-<td class="right">03</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">6</td>
-<td class="right">Ground</td>
-<td class="left">ground motors</td>
-<td class="left">black</td>
+<td class="org-right">5</td>
+<td class="org-right">03</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">6</td>
+<td class="org-right">Ground</td>
+<td class="org-left">ground motors</td>
+<td class="org-left">black</td>
 </tr>
 
 <tr>
-<td class="right">7</td>
-<td class="right">04</td>
-<td class="left">motor</td>
-<td class="left">blue</td>
-<td class="right">8</td>
-<td class="right">14</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">7</td>
+<td class="org-right">04</td>
+<td class="org-left">motor</td>
+<td class="org-left">blue</td>
+<td class="org-right">8</td>
+<td class="org-right">14</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">9</td>
-<td class="right">Ground</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">10</td>
-<td class="right">15</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">9</td>
+<td class="org-right">Ground</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">10</td>
+<td class="org-right">15</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">11</td>
-<td class="right">17</td>
-<td class="left">motor</td>
-<td class="left">purple</td>
-<td class="right">12</td>
-<td class="right">18</td>
-<td class="left">sonar</td>
-<td class="left">orange</td>
+<td class="org-right">11</td>
+<td class="org-right">17</td>
+<td class="org-left">motor</td>
+<td class="org-left">purple</td>
+<td class="org-right">12</td>
+<td class="org-right">18</td>
+<td class="org-left">sonar</td>
+<td class="org-left">orange</td>
 </tr>
 
 <tr>
-<td class="right">13</td>
-<td class="right">27</td>
-<td class="left">motor</td>
-<td class="left">grey</td>
-<td class="right">14</td>
-<td class="right">Ground</td>
-<td class="left">GND led</td>
-<td class="left">black</td>
+<td class="org-right">13</td>
+<td class="org-right">27</td>
+<td class="org-left">motor</td>
+<td class="org-left">grey</td>
+<td class="org-right">14</td>
+<td class="org-right">Ground</td>
+<td class="org-left">GND led</td>
+<td class="org-left">black</td>
 </tr>
 
 <tr>
-<td class="right">15</td>
-<td class="right">22</td>
-<td class="left">motor</td>
-<td class="left">white</td>
-<td class="right">16</td>
-<td class="right">23</td>
-<td class="left">sonar</td>
-<td class="left">yellow</td>
+<td class="org-right">15</td>
+<td class="org-right">22</td>
+<td class="org-left">motor</td>
+<td class="org-left">white</td>
+<td class="org-right">16</td>
+<td class="org-right">23</td>
+<td class="org-left">sonar</td>
+<td class="org-left">yellow</td>
 </tr>
 
 <tr>
-<td class="right">17</td>
-<td class="right">3.3v DC power</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">18</td>
-<td class="right">24</td>
-<td class="left">red led</td>
-<td class="left">blue</td>
+<td class="org-right">17</td>
+<td class="org-right">3.3v DC power</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">18</td>
+<td class="org-right">24</td>
+<td class="org-left">red led</td>
+<td class="org-left">blue</td>
 </tr>
 
 <tr>
-<td class="right">19</td>
-<td class="right">10</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">20</td>
-<td class="right">Ground</td>
-<td class="left">GND speaker</td>
-<td class="left">black</td>
+<td class="org-right">19</td>
+<td class="org-right">10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">20</td>
+<td class="org-right">Ground</td>
+<td class="org-left">GND speaker</td>
+<td class="org-left">black</td>
 </tr>
 
 <tr>
-<td class="right">21</td>
-<td class="right">09</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">22</td>
-<td class="right">25</td>
-<td class="left">speaker</td>
-<td class="left">brown</td>
+<td class="org-right">21</td>
+<td class="org-right">09</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">22</td>
+<td class="org-right">25</td>
+<td class="org-left">speaker</td>
+<td class="org-left">brown</td>
 </tr>
 
 <tr>
-<td class="right">23</td>
-<td class="right">11</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">24</td>
-<td class="right">08</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">23</td>
+<td class="org-right">11</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">24</td>
+<td class="org-right">08</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">25</td>
-<td class="right">Ground</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">26</td>
-<td class="right">07</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">25</td>
+<td class="org-right">Ground</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">26</td>
+<td class="org-right">07</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">27</td>
-<td class="right">ID<sub>SD</sub></td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">28</td>
-<td class="right">ID<sub>SC</sub></td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">27</td>
+<td class="org-right">ID<sub>SD</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">28</td>
+<td class="org-right">ID<sub>SC</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">29</td>
-<td class="right">05</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">30</td>
-<td class="right">Ground</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">29</td>
+<td class="org-right">05</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">30</td>
+<td class="org-right">Ground</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">31</td>
-<td class="right">06</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">32</td>
-<td class="right">12</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">31</td>
+<td class="org-right">06</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">32</td>
+<td class="org-right">12</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">33</td>
-<td class="right">13</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">34</td>
-<td class="right">Ground</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">33</td>
+<td class="org-right">13</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">34</td>
+<td class="org-right">Ground</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">35</td>
-<td class="right">19</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">36</td>
-<td class="right">16</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">35</td>
+<td class="org-right">19</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">36</td>
+<td class="org-right">16</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">37</td>
-<td class="right">26</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">38</td>
-<td class="right">20</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">37</td>
+<td class="org-right">26</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">38</td>
+<td class="org-right">20</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">39</td>
-<td class="right">Ground</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">40</td>
-<td class="right">21</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">39</td>
+<td class="org-right">Ground</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">40</td>
+<td class="org-right">21</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="right">&#xa0;</td>
-<td class="right">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="right">&#xa0;</td>
-<td class="right">&#xa0;</td>
-<td class="left">&#xa0;</td>
-<td class="left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Instructions for remote desktop of robot.</h3>
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> Instructions for remote desktop of robot.</h3>
 <div class="outline-text-3" id="text-1-3">
 <ol class="org-ol">
 <li>initiate remote desktop session on raspberry pi:
-<code>tightvncserver</code>
-</li>
-<li>Note log file name
-</li>
-<li>on remote computer, <code>initiate</code>
-</li>
+<code>tightvncserver</code></li>
+<li>Note log file name</li>
+<li>on remote computer, <code>initiate</code></li>
 </ol>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Software</h2>
+<div id="outline-container-orgheadline28" class="outline-2">
+<h2 id="orgheadline28"><span class="section-number-2">2</span> Software</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Programming</h3>
+</div><div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27"><span class="section-number-3">2.1</span> Programming</h3>
 <div class="outline-text-3" id="text-2-1">
-</div><div id="outline-container-sec-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Cognitive Map</h4>
+</div><div id="outline-container-orgheadline24" class="outline-4">
+<h4 id="orgheadline24"><span class="section-number-4">2.1.1</span> Cognitive Map</h4>
 <div class="outline-text-4" id="text-2-1-1">
-</div><ol class="org-ol"><li><a id="sec-2-1-1-1" name="sec-2-1-1-1"></a>Action<br  /><ol class="org-ol"><li><a id="sec-2-1-1-1-1" name="sec-2-1-1-1-1"></a>Motor <code>[85%]</code><br  /><ol class="org-ol"><li><a id="sec-2-1-1-1-1-1" name="sec-2-1-1-1-1-1"></a><span class="done DONE">DONE</span> Forward<br  /></li>
-<li><a id="sec-2-1-1-1-1-2" name="sec-2-1-1-1-1-2"></a><span class="done DONE">DONE</span> Reverse<br  /></li>
-<li><a id="sec-2-1-1-1-1-3" name="sec-2-1-1-1-1-3"></a><span class="done DONE">DONE</span> turn<sub>right</sub><br  /></li>
-<li><a id="sec-2-1-1-1-1-4" name="sec-2-1-1-1-1-4"></a><span class="done DONE">DONE</span> turn<sub>left</sub><br  /></li>
-<li><a id="sec-2-1-1-1-1-5" name="sec-2-1-1-1-1-5"></a><span class="done DONE">DONE</span> pivot<sub>left</sub><br  /></li>
-<li><a id="sec-2-1-1-1-1-6" name="sec-2-1-1-1-1-6"></a><span class="done DONE">DONE</span> pivot<sub>right</sub><br  /></li>
-<li><a id="sec-2-1-1-1-1-7" name="sec-2-1-1-1-1-7"></a><span class="todo TODO">TODO</span> Random reorient<br  /></li></ol>
-</li>
-<li><a id="sec-2-1-1-1-2" name="sec-2-1-1-1-2"></a>LED<br  /></li>
-<li><a id="sec-2-1-1-1-3" name="sec-2-1-1-1-3"></a>Sound<br  /></li></ol>
-</li>
+</div><ol class="org-ol"><li><a id="orgheadline6"></a>Cognition<br  /><ol class="org-ol"><li><a id="orgheadline5"></a><span class="todo TODO">TODO</span> Spatial<br  /></li></ol></li>
 
-<li><a id="sec-2-1-1-2" name="sec-2-1-1-2"></a>Perception<br  /><ol class="org-ol"><li><a id="sec-2-1-1-2-1" name="sec-2-1-1-2-1"></a>Sonar <code>[0%]</code><br  /><ol class="org-ol"><li><a id="sec-2-1-1-2-1-1" name="sec-2-1-1-2-1-1"></a><span class="todo TODO">TODO</span> Monitor Distance<br  /></li>
-<li><a id="sec-2-1-1-2-1-2" name="sec-2-1-1-2-1-2"></a><span class="todo TODO">TODO</span> Measure Distance<br  /></li>
-<li><a id="sec-2-1-1-2-1-3" name="sec-2-1-1-2-1-3"></a><span class="todo TODO">TODO</span> Movement Detection<br  /></li></ol>
-</li></ol>
-</li></ol>
+<li><a id="orgheadline18"></a>Action<br  /><ol class="org-ol"><li><a id="orgheadline14"></a>Motor <code>[85%]</code><br  /><ol class="org-ol"><li><a id="orgheadline7"></a><span class="done DONE">DONE</span> Forward<br  /></li>
+<li><a id="orgheadline8"></a><span class="done DONE">DONE</span> Reverse<br  /></li>
+<li><a id="orgheadline9"></a><span class="done DONE">DONE</span> turn<sub>right</sub><br  /></li>
+<li><a id="orgheadline10"></a><span class="done DONE">DONE</span> turn<sub>left</sub><br  /></li>
+<li><a id="orgheadline11"></a><span class="done DONE">DONE</span> pivot<sub>left</sub><br  /></li>
+<li><a id="orgheadline12"></a><span class="done DONE">DONE</span> pivot<sub>right</sub><br  /></li>
+<li><a id="orgheadline13"></a><span class="todo TODO">TODO</span> Random reorient<br  /></li></ol></li>
+<li><a id="orgheadline15"></a>LED<br  /></li>
+<li><a id="orgheadline16"></a>Sound<br  /></li>
+<li><a id="orgheadline17"></a>Video<br  /></li></ol></li>
+
+<li><a id="orgheadline23"></a>Perception<br  /><ol class="org-ol"><li><a id="orgheadline22"></a>Sonar <code>[0%]</code><br  /><ol class="org-ol"><li><a id="orgheadline19"></a><span class="todo TODO">TODO</span> Monitor Distance<br  /></li>
+<li><a id="orgheadline20"></a><span class="todo TODO">TODO</span> Measure Distance<br  /></li>
+<li><a id="orgheadline21"></a><span class="todo TODO">TODO</span> Movement Detection<br  /></li></ol></li></ol></li></ol>
 </div>
 
-<div id="outline-container-sec-2-1-2" class="outline-4">
-<h4 id="sec-2-1-2"><span class="section-number-4">2.1.2</span> Tasks</h4>
+<div id="outline-container-orgheadline26" class="outline-4">
+<h4 id="orgheadline26"><span class="section-number-4">2.1.2</span> Tasks</h4>
 <div class="outline-text-4" id="text-2-1-2">
-</div><ol class="org-ol"><li><a id="sec-2-1-2-1" name="sec-2-1-2-1"></a><span class="todo TODO">TODO</span> Random Walk<br  /><div class="outline-text-5" id="text-2-1-2-1">
+</div><ol class="org-ol"><li><a id="orgheadline25"></a><span class="todo TODO">TODO</span> Random Walk<br  /><div class="outline-text-5" id="text-2-1-2-1">
 <p>
 Randomly walk around environment, avioding obstacles
 </p>
-</div>
-</li></ol>
+</div></li></ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: William</p>
-<p class="date">Created: 2015-11-25 Wed 09:53</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2015-12-05 Sat 09:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

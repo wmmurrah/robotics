@@ -75,5 +75,5 @@
 *** Tasks
 
 **** TODO Random Walk
-     Randomly walk around environment, avioding obstacles
+     Randomly walk around environment, avoiding obstacles
      

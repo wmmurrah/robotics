@@ -1,0 +1,45 @@
+#+TITLE: Quadcopter Documentation
+#+AUTHOR: William Murrah
+
+* Resources
+
+** Hardware
+   [[https://www.raspberrypi.org/][raspberry pi]]
+   [[https://www.electricwingman.com/][electricwingman]]
+   [[http://www.unmannedtech.co.uk/][unmannedtech]] 
+** Software
+   [[http://ardupilot.com/][ardupilot]]
+
+** Tutorials/How-to/blogs
+   [[http://blog.pistuffing.co.uk][pistuffing]] raspberry pi project blog
+   [[http://www.droneflyers.com/][drone flyers]]
+
+* Potential Quadcopter Components
+** Platform
+   [[https://store.3drobotics.com/products/iris][3d Robotics Iris+ Multicopter 915 Mhz 3DR]] ([[http://www.amazon.com/Robotics-Multicopter-Brushless-Gimbal-Battery/dp/B0124VK94E/ref=sr_1_7?ie=UTF8&qid=1451248774&sr=8-7&keywords=iris+quadcopter+batteries][amazon.com]])
+   
+** Control 
+*** Raspberry pi 2 model B
+
+** Sensor
+
+** Effector
+
+* Fleet Plan
+
+** Phase I: RTF 
+
+| drone    |  cost | flt. time | chrg. time | ctrl. dist. | freq    | wt.    | size      | battery      | memory      | blade prot. |    |
+|----------+-------+-----------+------------+-------------+---------+--------+-----------+--------------+-------------+-------------+----|
+| <8>      |       |           |            |             |         |        |           | <12>         |             |             | <2> |
+| Syma X5C | 49.88 | 7 min     | 100 min    | 30 meters   | 2.4 Ghz | 10.7g  | 31x31x8cm | 3.7V Li-poly | 2GB MicroSD | yes         |    |
+| Blade Nano QX | 95.99 | 8 min     |            |             |         | 16.5 g |           | 3.7V 1S 150mAh 25C LiPo |             |             | [[http://www.amazon.com/BLADE-Nano-QX-RTF-Quadcopter/dp/B00SNEJA92/ref=sr_1_1?s=toys-and-games&ie=UTF8&qid=1451262231&sr=1-1&keywords=blade+quadcopter][2]]  |
+|          |       |           |            |             |         |        |           |              |             |             |    |
+
+** Phase II: Programmable
+
+** Phase III: 
+
+** Bitcraze Crazyflie nano quadcopter
+   [[http://www.i-programmer.info/news/169-robotics/5653-nano-quadcopter-your-personal-flying-robot.html][iprogrammer]]
+   This unit his on back order and requires soldering
