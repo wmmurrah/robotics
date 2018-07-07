@@ -38,12 +38,14 @@
 
 ** Instructions for remote desktop of robot.
    1. initiate remote desktop session on raspberry pi:
-      =tightvncserver :1 -geometry 1920x1080 -depth 24=  should play around with these parameters for optimality
+      =tightvncserver :1 -geometry 1920x10808 -depth 24=  should play around with these parameters for optimality
    2. Note log file name
    3. on remote computer either ~ssh @pi.192.168.1.103~ or use remote desktop
 *** TODO Keyboard for remote desktop
     Determine how to setup keyboard on remote desktop to use keyboard setup on raspbian.
       
+**** x11vnc
+      x11vnc -rfbauth /home/pi/.vnc/passwd 
 * Software
 
 ** Raspbian Operating System Setup

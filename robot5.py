@@ -85,7 +85,7 @@ def pivot_right(tf):
     time.sleep(tf)
     gpio.cleanup()
 
-'''
+
 def key_input(event):
     init()
     print'Key:', event.char
@@ -117,7 +117,7 @@ def key_input(event):
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
-'''
+
 
 
 def check_front():
@@ -133,7 +133,7 @@ def check_front():
             print('Obstacle too close at ', dist)
             sys.exit()
 
-'''
+
 def search():
     init()
     dist = distance()
@@ -147,7 +147,7 @@ def search():
 
 for z in range(30):
     search()
-'''
+
 
 
 def autonomy():

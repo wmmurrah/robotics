@@ -84,7 +84,7 @@ def pivot_right(tf):
     time.sleep(tf)
     gpio.cleanup()
 
-'''
+
 def key_input(event):
     init()
     print'Key:', event.char
@@ -116,7 +116,7 @@ def key_input(event):
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
 command.mainloop()
-'''
+
 
 
 def check_front():
