@@ -1,4 +1,9 @@
+# camera.py
+"""Code to integrate camera in kindy"""
+
+
 import picamera
+
 
 with picamera.PiCamera() as camera:
     camera.resolution = (640, 480)

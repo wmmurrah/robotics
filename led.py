@@ -1,3 +1,7 @@
+# led.py
+"""LED for kindy"""
+
+
 import RPi.GPIO as gpio
 import time
 

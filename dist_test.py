@@ -1,3 +1,7 @@
+# dist_test.py
+"""Test distance with sonar on kindy"""
+
+
 import RPi.GPIO as gpio
 import time
 
@@ -13,14 +17,14 @@ def send_trig():
     gpio.output(trig_pin, True)
     time.sleep(0.0001)
     gpio.output(trig_pin, False)
-    
+
 
 def wait_echo(value, timeout):
     count = timeout
     while gpio.input(echo_pin) != value and count > 0:
         count = count - 1
 
-        
+     
 def ping_dist():
     send_trig()
     wait_echo(True, 10000)
@@ -38,5 +42,4 @@ while True:
     time.sleep(1)
 
 
-
-    
+  
